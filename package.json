@@ -1,0 +1,16 @@
+{
+  "name": "food_log_api",
+  "version": "1.0.0",
+  "description": "Food Log API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Bosman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.17.2"
+  }
+}
