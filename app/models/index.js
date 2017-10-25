@@ -43,13 +43,8 @@ Object.keys(db).forEach(function (modelName) {
 });
 
 
-//Add two sequelize variations
+//Add sequelize instance
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-// Force the creation!
-sequelize.sync({ force: true }) //TESTING ONLY: this will drop the table first and re-create it afterwards
-//sequelize.sync();
-
+//db.Sequelize = Sequelize;
 
 module.exports = db;
