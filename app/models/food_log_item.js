@@ -22,25 +22,25 @@ module.exports = function (sequelize, DataTypes) {
         },
         food_item_uuid: {
             type: DataTypes.UUID,
-            allowNull: false,
-            //references: 'food_items',
-            //referencesKey: 'food_item_uuid'
+            allowNull: false
         },
         measurement_uuid: {
             type: DataTypes.UUID,
-            allowNull: false,
-            //references: 'measurements',
-            //referencesKey: 'measurement_uuid'
+            allowNull: false
         },
-        calories: { type: DataTypes.DOUBLE, allowNull: false },
-        fats: { type: DataTypes.DOUBLE, allowNull: true },
-        saturated_fat: { type: DataTypes.DOUBLE, allowNull: true },
-        cholesterol: { type: DataTypes.DOUBLE, allowNull: true },
-        sodium: { type: DataTypes.DOUBLE, allowNull: true },
-        carbohydrates: { type: DataTypes.DOUBLE, allowNull: true },
-        fiber: { type: DataTypes.DOUBLE, allowNull: true },
-        sugars: { type: DataTypes.DOUBLE, allowNull: true },
-        protein: { type: DataTypes.DOUBLE, allowNull: true }
+        measurement_units: { type: DataTypes.DOUBLE, allowNull: false },
+        //Move out to separate tables?
+        date: { type: DataTypes.DATEONLY, allowNull: false },
+        meal: {
+            type: DataTypes.ENUM,
+            allowNull: false,
+            values: [
+                'BREAKFAST',
+                'LUNCH',
+                'DINNER',
+                'SNACK'
+            ]
+        },
     });
 
     //Define table associations
