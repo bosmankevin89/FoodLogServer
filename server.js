@@ -18,7 +18,7 @@ const sampleData = require('./app/data/create_data.js'); //FOR TESTING ONLY.
 //TESTING ONLY: this will drop the table first and re-create it afterwards
 db.sequelize.sync({ force: true }).then(function () {
   
-  sampleData.initSampleData();
+  sampleData.initSampleData(); //TESTING
 
   app.get('/', function (req, res) {
     res.send('Hello World!')

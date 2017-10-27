@@ -20,6 +20,10 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: DataTypes.UUIDV4,
             allowNull: false
         },
+        user_uuid: {
+            type: DataTypes.UUID,
+            allowNull: false
+        },
         food_item_uuid: {
             type: DataTypes.UUID,
             allowNull: false
@@ -48,9 +52,9 @@ module.exports = function (sequelize, DataTypes) {
 
         model.belongsTo(models.user, {
             onDelete: "CASCADE",
-            foreignKey: {
-                allowNull: false
-            }
+            foreignKey: 'user_uuid',
+            targetKey: 'user_uuid',
+            foreignKeyConstraint: true
         });
 
         model.belongsTo(
