@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
-const config = require(path.join(__dirname, '..', '..', 'config', 'config.json'));
+const config = require(path.join(__dirname, '..', 'config', 'config.json'));
 
 
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
