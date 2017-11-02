@@ -6,14 +6,17 @@
 
 */
 
+//Core Modules
 const path = require("path");
 const express = require('express');
 const app = express();
 
+//Route Modules
+var routes = require('./routes/index');
+var users  = require('./routes/users');
   
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-});
-
+//Define Routes
+app.use('/', routes);
+app.use('/users', users);
 
 module.exports = app;
