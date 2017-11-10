@@ -9,8 +9,13 @@
   "author": "Kevin Bosman",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "express": "^4.16.2",
+    "express-jwt": "^5.3.0",
+    "jwks-rsa": "^1.2.1",
+    "morgan": "^1.9.0",
     "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
     "sequelize": "^4.17.2",
     "uuid": "^3.1.0"
   }
