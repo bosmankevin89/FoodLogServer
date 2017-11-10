@@ -47,12 +47,19 @@ var test_uuids = {
 dataModule.initSampleData = function () {
 
     //Initialize User
-    models.user.create(
-        {
-            user_uuid: test_uuids.userUUID,
-            display_name: 'Example Exampleson Jr',
-            google_id: 'EXAMPLE'
-        }
+    models.user.bulkCreate(
+        [
+            {
+                user_uuid: test_uuids.userUUID,
+                display_name: 'Example Exampleson Jr',
+                google_id: 'EXAMPLE'
+            },
+            {
+                user_uuid: uuidv4(),
+                display_name: 'No-Log Examplebert',
+                google_id: 'NO_LOG_EXAMPLE'
+            }
+        ]
     ).then(function () {
         //Initialize Measurements
         models.measurement.create(
@@ -154,7 +161,7 @@ dataModule.initSampleData = function () {
 
                     }
                 ]
-            ).then(function(){
+            ).then(function () {
                 //Create Food Log Items
                 models.food_log_item.bulkCreate(
                     [
