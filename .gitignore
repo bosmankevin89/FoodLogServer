@@ -1,1 +1,4 @@
+config/auth0.json
 config/config.json
+config/database.json
+node_modules/
