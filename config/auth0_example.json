@@ -1,0 +1,9 @@
+{
+    "cache": true,
+    "rateLimit": true,
+    "jwksRequestsPerMinute": 5,
+    "jwksUri": "[URI]",
+    "audience": "[AUDIENCE]",
+    "issuer": "[ISSUER]",
+    "algorithms": "RS256"
+}
