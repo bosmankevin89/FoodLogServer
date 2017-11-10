@@ -14,6 +14,7 @@ var server = http.createServer(app);
 
 
 //Initialize Database
+//TODO Add error handling.
 models.sequelize.sync().then(function () {
 
   app.listen(3000, function () {

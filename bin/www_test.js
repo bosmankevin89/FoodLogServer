@@ -3,7 +3,7 @@
 const app = require('../server');
 const http = require('http');
 const models = require('../models');
-const sampleData = require('./test/create_data.js'); //FOR TESTING ONLY.
+const sampleData = require('../test/create_data.js'); //FOR TESTING ONLY.
 
 //Set port
 var port = '3000';
@@ -16,7 +16,7 @@ var server = http.createServer(app);
 //Initialize Database
 //db.sequelize.sync();
 //TESTING ONLY: this will drop the table first and re-create it afterwards
-models.sequelize.sync().then(function () {
+models.sequelize.sync({force:true}).then(function () {
   
   sampleData.initSampleData(); //TESTING
 
