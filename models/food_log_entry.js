@@ -13,8 +13,8 @@
 module.exports = function (sequelize, DataTypes) {
 
     //Create Model Object
-    var model = sequelize.define("food_log_item", {
-        food_log_item_uuid: {
+    var model = sequelize.define("food_log_entry", {
+        food_log_uuid: {
             type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4,
@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.UUID,
             allowNull: false
         },
-        food_item_uuid: {
+        food_uuid: {
             type: DataTypes.UUID,
             allowNull: false
         },
@@ -67,10 +67,10 @@ module.exports = function (sequelize, DataTypes) {
         );
 
         model.belongsTo(
-            models.food_item,
+            models.food,
             {
-                foreignKey: 'food_item_uuid',
-                targetKey: 'food_item_uuid',
+                foreignKey: 'food_uuid',
+                targetKey: 'food_uuid',
                 foreignKeyConstraint: true
             }
         );

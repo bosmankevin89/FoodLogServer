@@ -32,7 +32,7 @@ module.exports = function (sequelize, DataTypes) {
     model.associate = function (models) {
 
         model.hasMany(
-            models.food_item,
+            models.food,
             {
                 foreignKey: 'default_measurement_uuid',
                 targetKey: 'measurement_uuid',
@@ -41,7 +41,7 @@ module.exports = function (sequelize, DataTypes) {
         );
 
         model.hasMany(
-            models.food_log_item,
+            models.food_log_entry,
             {
                 foreignKey: 'measurement_uuid',
                 targetKey: 'measurement_uuid',

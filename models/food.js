@@ -1,5 +1,5 @@
 /*  
-    Food_Item
+    Food
     -----------------------
     A food item available in the library of available foods.
 
@@ -13,8 +13,8 @@
 module.exports = function (sequelize, DataTypes) {
 
     //Create Model Object
-    var model = sequelize.define("food_item", {
-        food_item_uuid: {
+    var model = sequelize.define("food", {
+        food_uuid: {
             type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4,
@@ -42,10 +42,10 @@ module.exports = function (sequelize, DataTypes) {
     model.associate = function (models) {
 
         model.hasMany(
-            models.food_log_item,
+            models.food_log_entry,
             {
-                foreignKey: 'food_item_uuid',
-                targetKey: 'food_item_uuid',
+                foreignKey: 'food_uuid',
+                targetKey: 'food_uuid',
                 foreignKeyConstraint: true
             }
         );
