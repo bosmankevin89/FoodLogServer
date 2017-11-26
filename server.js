@@ -18,7 +18,7 @@ const app = express();
 
 //Route Modules
 var routes = require('./routes/index');
-var users  = require('./routes/users');
+var user  = require('./routes/user');
 
 //TODO Enable CORS?
 
@@ -39,10 +39,9 @@ var jwtCheck = jwt({
 app.use(jwtCheck);
 
 
-
 //Define Routes
 app.use('/', routes);
-app.use('/users', users);
+app.use('/user', user);
 
 
 
