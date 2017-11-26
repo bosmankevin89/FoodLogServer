@@ -18,7 +18,7 @@ var server = http.createServer(app);
 //TESTING ONLY: this will drop the table first and re-create it afterwards
 models.sequelize.sync({force:true}).then(function () {
   
-  sampleData.initSampleData(); //TESTING
+  //sampleData.initSampleData(); //TESTING
 
   app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
